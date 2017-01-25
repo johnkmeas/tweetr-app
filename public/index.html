@@ -6,28 +6,60 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,700" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
-    <!-- External JS -->
-    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
-
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
+    <!-- Nav CSS -->
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <!-- Tweet Layout -->
+   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+   <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
   </head>
 
   <body>
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
+      <img class="logo" src="/images/bird.png" >
       <span class="header">Tweeter</span>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-    </main>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets/" method="POST">
+          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </form>
+      </section>
+      <section id="tweets-container">
+        <!-- <article class="tweet">
+          <header>
+            <h2>John Meas</h2>
+            <h6>@MrJohn</h6>
+          </header>
 
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum neque, repudiandae fugiat dolor sunt vero rem deserunt maiores unde, quibusdam sequi corporis itaque reiciendis laborum architecto recusandae asperiores incidunt, voluptate.</p>
+          <footer>
+            <time>10 days ago</time>
+            <nav class="icons">
+              <i class="fa fa-flag" aria-hidden="true"></i>
+              <i class="fa fa-retweet" aria-hidden="true"></i>
+              <i class="fa fa-heart" aria-hidden="true"></i>
+            </nav>
+          </footer>
+        </article> -->
+      </section>
+    </main>
+    <!-- External JS -->
+    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script src="/scripts/composer-char-counter.js"></script>
   </body>
 </html>

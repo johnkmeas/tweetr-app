@@ -8,6 +8,7 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
+  /*border: 1px solid red;*/
 }
 
 /*
@@ -18,8 +19,24 @@ body {
   margin: 0;
   color: #244751;
   background-color: #eee;
+  font-family: 'roboto condensed', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+/*p {
+  background-color: lightblue;
+  color: green;
+}*/
+
+main.container {
+  position: relative;
+  display: block;
+  padding-top: 50px;
+  height: auto;
+  background-color: white;
+  top: 60px;
+  width: 450px;
+  margin: 0 auto;
+}
