@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
   $('form textarea').on('keyup', function(event){
     const currentCount =  140 - $(this).val().length;
     const counter = $(this).siblings('.counter');

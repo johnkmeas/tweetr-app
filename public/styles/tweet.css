@@ -1,9 +1,10 @@
-article.tweet #tweet-container {
+/*article.tweet #tweet-container {
   background-color: white;
   border-radius: 6px;
-}
+}*/
 
 article.tweet {
+  cursor: pointer;
   overflow: hidden;
   background-color: #eee;
   border-radius: 6px;
@@ -19,6 +20,9 @@ article.tweet:hover {
   transition: 300ms;
   border: 0.4px solid #9f9f9f;
   transform: scale(1.009);
+-webkit-box-shadow: 0px 5px 20px -8px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 5px 20px -8px rgba(0,0,0,0.75);
+box-shadow: 0px 5px 20px -8px rgba(0,0,0,0.75);
 }
 
 nav.icons {
@@ -29,25 +33,30 @@ nav.icons {
 }
 
 nav.icons .fa {
-  padding-left: 4px;
+  padding-left: 6px;
 }
 
-article.tweet:hover  .icons {
+article.tweet:hover .icons {
   opacity: 1;
   transition: 300ms;
 }
 
 article.tweet header {
-
+  padding: 6px 0px;
   background-color: #eee;
-  padding: 0px 0px;
+}
+
+article.tweet header img {
+  border-radius: 6px;
 }
 
 article.tweet h2 {
-    display: inline-block;
-    line-height: 1px;
-    padding-bottom: 1em;
-
+  display: inline;
+  position: relative;
+  top: -30px;
+  padding-left: 10px;
+  line-height: 1px;
+  padding-bottom: 1em;
 }
 
 article.tweet p {
