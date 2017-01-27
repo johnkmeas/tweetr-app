@@ -3,25 +3,42 @@
 // Simulates the kind of delay we see with network or filesystem operations
 const simulateDelay = require("./util/simulate-delay");
 
-// Defines helper functions for saving and getting tweets, using the database `db`
-module.exports = function makeDataHelpers(db) {
+function makeDataHelpersMongo(db) {
   return {
-
     // Saves a tweet to `db`
-    saveTweet: function(newTweet, callback) {
-      simulateDelay(() => {
-        db.tweets.push(newTweet);
-        callback(null, true);
+    saveTweet: function (newTweet, callback) {
+      db.collection("tweets").insertOne(newTweet, (err, tweets) => {
+        if (err) {
+          return callback(err);
+        }
+        callback(null);
+      });
+    },
+    // Get all tweets in `db`, sorted by newest first
+    getTweets: function(callback) {
+      db.collection("tweets").find().toArray((err, tweets) => {
+        if (err) {
+          return callback(err);
+        }
+        callback(null, tweets);
+      });
+    },
+    saveLike: function (user, like, callback) {
+      db.scores.findOneAndUpdate(
+         { "name" : "R. Stiles" },
+         { $inc: { "points" : 5 } }
+      )
+      db.collection("tweets").find().insertOne(newTweet, (err, tweets) => {
+        if (err) {
+          return callback(err);
+        }
+        callback(null);
       });
     },
 
-    // Get all tweets in `db`, sorted by newest first
-    getTweets: function(callback) {
-      simulateDelay(() => {
-        const sortNewestFirst = (a, b) => a.created_at - b.created_at;
-        callback(null, db.tweets.sort(sortNewestFirst));
-      });
-    }
-
   };
 }
+
+// Defines helper functions for saving and getting tweets, using the database `db`
+module.exports = makeDataHelpersMongo;
+
