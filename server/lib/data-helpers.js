@@ -23,19 +23,6 @@ function makeDataHelpersMongo(db) {
         callback(null, tweets);
       });
     },
-    saveLike: function (user, like, callback) {
-      db.scores.findOneAndUpdate(
-         { "name" : "R. Stiles" },
-         { $inc: { "points" : 5 } }
-      )
-      db.collection("tweets").find().insertOne(newTweet, (err, tweets) => {
-        if (err) {
-          return callback(err);
-        }
-        callback(null);
-      });
-    },
-
   };
 }
 

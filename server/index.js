@@ -19,7 +19,6 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
     console.error(`Failed to connect: ${MONGODB_URI}`);
     throw err;  // in effect this line just says "crash"; nothing later will happen
   }
-
   // Because it exports a function that expects the `db` as a parameter, we can
   // require it and pass the `db` parameter immediately:
   const DataHelpers = require("./lib/data-helpers.js")(db);
