@@ -3,20 +3,20 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,700");
 html {
   box-sizing: border-box; }
 
 *, *:before, *:after {
-  box-sizing: inherit;
-  /*border: 1px solid red;*/ }
+  box-sizing: inherit; }
 
 /*
  * Global layout stuff
  */
 body {
-  margin: 0;
-  color: #244751;
   background-color: #eee;
+  color: #244751;
+  margin: 0;
   font-family: 'roboto condensed', sans-serif; }
 
 /*
@@ -27,31 +27,31 @@ body {
   color: green;
 }*/
 main.container {
-  position: relative;
-  display: block;
-  padding-top: 50px;
-  height: auto;
   background-color: white;
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 50px;
+  position: relative;
   top: 60px;
-  width: 450px;
-  margin: 0 auto; }
+  width: 450px; }
 
 #nav-bar {
-  position: fixed;
   background-color: #00a087;
-  color: #e8fdff;
+  color: rgba(255, 255, 255, 0.8);
   height: 80px;
-  width: 100%;
   padding: 0 2em;
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: 1; }
 
 #nav-bar .logo {
-  width: 80px;
-  height: 80px;
   float: left;
+  height: 80px;
   margin-right: 10px;
-  opacity: 0.6; }
+  opacity: 0.6;
+  width: 80px; }
 
 #nav-bar .header {
   float: left;
@@ -59,15 +59,15 @@ main.container {
   line-height: 80px; }
 
 .compose {
-  cursor: pointer;
   background-color: white;
-  color: #00a087;
-  margin: 10px;
-  float: right;
-  padding: 20px;
-  border-radius: 5px;
   border: 1px solid black;
+  border-radius: 5px;
+  color: #00a087;
+  cursor: pointer;
+  float: right;
+  margin: 10px;
   opacity: 0.8;
+  padding: 20px;
   transition: 300ms; }
 
 .compose:hover {
@@ -78,39 +78,35 @@ main.container {
 i.fa-pencil-square-o {
   padding-right: 5px; }
 
-/*article.tweet #tweet-container {
-  background-color: white;
-  border-radius: 6px;
-}*/
 article.tweet {
-  cursor: pointer;
-  overflow: hidden;
   background-color: #eee;
-  border-radius: 6px;
-  margin: 2em;
-  padding: 1px 8px;
   border: 0.4px solid #d7d6d6;
-  transition: 300ms;
-  opacity: 0.7; }
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 2em;
+  opacity: 0.7;
+  overflow: hidden;
+  padding: 1px 8px;
+  transition: 300ms; }
 
 article.tweet:hover {
-  opacity: 1;
-  transition: 300ms;
   border: 0.4px solid #9f9f9f;
-  transform: scale(1.009);
   -webkit-box-shadow: 0px 5px 20px -8px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 5px 20px -8px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 5px 20px -8px rgba(0, 0, 0, 0.75); }
+  box-shadow: 0px 5px 20px -8px rgba(0, 0, 0, 0.75);
+  opacity: 1;
+  transition: 300ms;
+  transform: scale(1.009); }
 
 nav.icons {
+  color: #00a087;
   float: right;
   opacity: 0;
-  transition: 300ms;
-  color: #00a087; }
+  transition: 300ms; }
 
 nav.icons .fa {
-  transition: 300ms;
   padding-left: 6px;
+  transition: 300ms;
   z-index: 10; }
 
 i.fa-heart:hover {
@@ -122,19 +118,19 @@ article.tweet:hover .icons {
   transition: 300ms; }
 
 article.tweet header {
-  padding: 6px 0px;
-  background-color: #eee; }
+  background-color: #eee;
+  padding: 6px 0px; }
 
 article.tweet header img {
   border-radius: 6px; }
 
 article.tweet h2 {
   display: inline;
-  position: relative;
-  top: -30px;
-  padding-left: 10px;
   line-height: 1px;
-  padding-bottom: 1em; }
+  padding-bottom: 1em;
+  padding-left: 10px;
+  position: relative;
+  top: -30px; }
 
 article.tweet p {
   background-color: white;
@@ -147,17 +143,20 @@ article.tweet header h6 {
   top: 0; }
 
 article.tweet footer {
+  border-top: 1px solid #d7d6d6;
   background-color: white;
   margin: -1px -8px;
-  padding: 5px 8px;
-  border-top: 1px solid #d7d6d6; }
+  padding: 5px 8px; }
+
+sup {
+  padding-left: 3px; }
 
 section.new-tweet {
   background-color: #eee;
+  border: 0.4px solid #d7d6d6;
   border-radius: 6px;
   margin: 2em;
-  padding: 1px 8px;
-  border: 0.4px solid #d7d6d6; }
+  padding: 1px 8px; }
 
 section.new-tweet h2 {
   border-bottom: 1px solid black; }

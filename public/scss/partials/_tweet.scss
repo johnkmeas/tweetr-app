@@ -1,40 +1,35 @@
-/*article.tweet #tweet-container {
-  background-color: white;
-  border-radius: 6px;
-}*/
-
 article.tweet {
-  cursor: pointer;
-  overflow: hidden;
   background-color: $light-grey;
-  border-radius: 6px;
-  margin: 2em;
-  padding: 1px 8px;
   border: 0.4px solid $grey;
-  transition: 300ms;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 2em;
   opacity: 0.7;
+  overflow: hidden;
+  padding: 1px 8px;
+  transition: 300ms;
 }
 
 article.tweet:hover {
+  border: 0.4px solid $mid-grey;
+  -webkit-box-shadow: 0px 5px 20px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 5px 20px -8px rgba(0,0,0,0.75);
+  box-shadow: 0px 5px 20px -8px rgba(0,0,0,0.75);
   opacity: 1;
   transition: 300ms;
-  border: 0.4px solid $mid-grey;
   transform: scale(1.009);
--webkit-box-shadow: 0px 5px 20px -8px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 5px 20px -8px rgba(0,0,0,0.75);
-box-shadow: 0px 5px 20px -8px rgba(0,0,0,0.75);
 }
 
 nav.icons {
+  color: #00a087;
   float: right;
   opacity: 0;
   transition: 300ms;
-  color: #00a087;
 }
 
 nav.icons .fa {
-  transition: 300ms;
   padding-left: 6px;
+  transition: 300ms;
   z-index: 10;
 }
 
@@ -50,8 +45,8 @@ article.tweet:hover .icons {
 }
 
 article.tweet header {
-  padding: 6px 0px;
   background-color: $light-grey;
+  padding: 6px 0px;
 }
 
 article.tweet header img {
@@ -60,11 +55,11 @@ article.tweet header img {
 
 article.tweet h2 {
   display: inline;
-  position: relative;
-  top: -30px;
-  padding-left: 10px;
   line-height: 1px;
   padding-bottom: 1em;
+  padding-left: 10px;
+  position: relative;
+  top: -30px;
 }
 
 article.tweet p {
@@ -79,8 +74,12 @@ article.tweet header h6 {
   top: 0;
 }
 article.tweet footer {
+  border-top: 1px solid $grey;
   background-color: white;
   margin: -1px -8px;
   padding: 5px 8px;
-  border-top: 1px solid $grey;
+}
+
+sup {
+  padding-left: 3px;
 }

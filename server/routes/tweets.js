@@ -16,24 +16,6 @@ module.exports = function(DataHelpers) {
       }
     });
   });
-  //Building the likes PUT function
-  tweetRoutes.put("/", function(req, res){
-    const like = {
-      like: req.body
-    };
-
-    // DataHelpers.saveLike(like, (err) => {
-      if (err) {
-        console.log("Tried to create like but failed!:  ", like);
-        res.status(500).json({ error: err.message });
-      } else {
-        console.log("Created Like:  ", like.like);
-        res.status(201).send();
-      }
-  })
-
-
-
 
   tweetsRoutes.post("/", function(req, res) {
     if (!req.body.text) {

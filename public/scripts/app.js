@@ -9,7 +9,7 @@ $(function(){
   function renderTweets(tweets) {
     tweets.forEach(function(item) {
       var $tweet = createTweetElement(item);
-      $('#tweets-container').append($tweet);
+      $('#tweets-container').prepend($tweet);
     });
   }
 
@@ -47,7 +47,6 @@ $(function(){
     var footer = $('<footer>');
     var time = $('<time>');
     var iconNav = $('<nav>');
-    var icony = $('<i>')
     var iconSocial = ('<i class="fa fa-%data%" aria-hidden="true"></i>');
     var flagIcon = $('<i>').addClass('fa fa-%data%').attr('aria-hidden', true);
 
@@ -75,10 +74,9 @@ $(function(){
     var iconFlag = iconSocial.replace('%data%', 'flag');
     var iconRetweet = iconSocial.replace('%data%', 'retweet');
     var iconHeart = iconSocial.replace('%data%', 'heart');
-    iconHeart = $(iconHeart).attr('data-likes', 0).text('0');
+    iconHeart = $(iconHeart).attr('data-likes', 0).append($('<sup>').text('0'));
     var $icons = $(iconNav).addClass('icons').append(iconFlag).append(iconRetweet).append(iconHeart);
     $($formatFooter).append($icons);
-
     $tweet.append($formatFooter);
     return $tweet;
   }
@@ -93,26 +91,6 @@ $(function(){
       $('.new-tweet').slideUp('fast');
     }
   });
-
-  $('#tweets-container').on('click', '.fa.fa-heart', function(event){
-    //console.log($(this).data('likes'))
-    $.ajax({
-        url: '/tweets',
-        data: 'some words to put in heart',
-        method: 'PUT',
-        success: function (morePostsHtml) {
-          alert('Load was performed.', morePostsHtml);
-      }
-    });
-    // if($(this).data('likes') === 0){
-    //   $(this).data('likes', 1);
-    //   $(this).css('color', 'red')
-    // }else {
-    //   $(this).data('likes', 0)
-    //   $(this).css('color', '#00a087')
-    // }
-    // $(this).css('color', 'red')
-  })
 
   //These are for buttons variables and function
   var $button = $('.new-tweet form');

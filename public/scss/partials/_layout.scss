@@ -8,17 +8,17 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
-  /*border: 1px solid red;*/
 }
 
 /*
  * Global layout stuff
  */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,700');
 
 body {
-  margin: 0;
-  color: #244751;
   background-color: $light-grey;
+  color: #244751;
+  margin: 0;
   font-family: 'roboto condensed', sans-serif;
 }
 
@@ -31,12 +31,12 @@ body {
 }*/
 
 main.container {
-  position: relative;
-  display: block;
-  padding-top: 50px;
-  height: auto;
   background-color: white;
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 50px;
+  position: relative;
   top: 60px;
   width: 450px;
-  margin: 0 auto;
 }

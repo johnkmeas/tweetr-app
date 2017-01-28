@@ -1,7 +1,6 @@
 "use strict";
 
 // Basic express setup:
-
 const PORT          = 8080;
 const express       = require("express");
 const bodyParser    = require("body-parser");
@@ -37,5 +36,3 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
   });
 
 });
-
-
