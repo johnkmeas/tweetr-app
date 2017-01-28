@@ -10,8 +10,10 @@
       "handle": "@SirIsaac"
     },
     "content": {
-      "text": {"If I have seen further it is by standing on the shoulders of giants" : "likes"}
+      "text": "If I have seen further it is by standing on the shoulders of giants"
     },
+    "likes": 0,
+
     "created_at": 1461116232227
   },
   {
@@ -26,8 +28,7 @@
     "content": {
       "text": "Je pense , donc je suis"
     },
+    "likes": 0,
     "created_at": 1461113959088
   }
 ]
-
-
