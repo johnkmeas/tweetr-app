@@ -47,7 +47,7 @@ $(function(){
     var footer = $('<footer>');
     var time = $('<time>');
     var iconNav = $('<nav>');
-    var iconSocial = ('<i class="fa fa-%data%" aria-hidden="true"></i>');
+    var iconSocial = '<i class="fa fa-%data%" aria-hidden="true"></i>';
     var flagIcon = $('<i>').addClass('fa fa-%data%').attr('aria-hidden', true);
 
     //Preformatted variables
@@ -56,7 +56,7 @@ $(function(){
     var avatar = tweet.user.avatars.small;
     var text = tweet.content.text;
     var timeCreated = moment(tweet.created_at).fromNow();
-    text = escape(text);
+    // text = escape(text);
 
     //Formatted Variables header
     var imageAvatar = $('<img>').attr('src', avatar);
@@ -93,12 +93,12 @@ $(function(){
   });
 
   //These are for buttons variables and function
-  var $button = $('.new-tweet form');
+  var $button = $('.new-tweet form'); //$('form textarea')
 
   $button.on('submit', function (event) {
 
     event.preventDefault();
-    var input = $( this ).serialize();
+    var input = $( this ).serialize();//TODO use .val()instead
     var text = input.slice(5);
 
     if(text.length <= 0){
@@ -109,7 +109,7 @@ $(function(){
     } else {
       $.ajax({
         url: '/tweets',
-        data: input,
+        data: input,// use serialize() here
         method: 'POST',
         success: function (morePostsHtml) {
           $($button)[0].reset();
